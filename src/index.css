@@ -1,0 +1,97 @@
+@import 'tailwindcss';
+@import "tw-animate-css";
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    font-family: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background:
+      radial-gradient(circle at 92% 4%, rgba(5, 112, 236, 0.08), transparent 28%),
+      radial-gradient(circle at 8% 24%, rgba(19, 206, 255, 0.07), transparent 35%),
+      #f8fbff;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Sora', 'Manrope', sans-serif;
+    letter-spacing: -0.02em;
+  }
+}
+
+:root {
+  --background: oklch(0.992 0.004 240);
+  --foreground: oklch(0.29 0.025 248);
+
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.29 0.025 248);
+
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.29 0.025 248);
+
+  --primary: oklch(0.57 0.17 254);
+  --primary-foreground: oklch(0.985 0 0);
+
+  --secondary: oklch(0.95 0.01 245);
+  --secondary-foreground: oklch(0.33 0.03 248);
+
+  --muted: oklch(0.972 0.008 245);
+  --muted-foreground: oklch(0.53 0.03 248);
+
+  --accent: oklch(0.75 0.12 224);
+  --accent-foreground: oklch(0.2 0.04 255);
+
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.985 0 0);
+
+  --border: oklch(0.91 0.012 245);
+  --input: oklch(0.91 0.012 245);
+  --ring: oklch(0.57 0.17 254);
+
+  --radius: 0.95rem;
+  --indigo: oklch(0.48 0.15 260);
+}
+
+@theme {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-indigo: var(--indigo);
+
+  --radius-sm: calc(var(--radius) * 0.5);
+  --radius-md: var(--radius);
+  --radius-lg: calc(var(--radius) * 1.35);
+  --radius-xl: calc(var(--radius) * 1.8);
+  --radius-2xl: calc(var(--radius) * 2.5);
+  --radius-full: 9999px;
+}
+
+.flutter-grid {
+  background-image:
+    linear-gradient(to right, rgba(127, 150, 186, 0.09) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(127, 150, 186, 0.09) 1px, transparent 1px);
+  background-size: 42px 42px;
+}
+
+.section-shell {
+  border: 1px solid rgba(135, 162, 198, 0.27);
+  background: rgba(255, 255, 255, 0.87);
+  box-shadow: 0 12px 40px rgba(36, 74, 139, 0.09);
+}
