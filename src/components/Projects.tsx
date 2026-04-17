@@ -6,6 +6,12 @@ import { Button } from "@/components/ui/button"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@/components/ui/dialog"
 import { ArrowRight, GithubLogo } from "@phosphor-icons/react"
+import getWellPlusImage from "@/assets/images/getwellplus1.png"
+import businessLocatorImage from "@/assets/images/businesslocator.png"
+import civilCalcImage from "@/assets/images/civilcalculator1.png"
+import fitOneImage from "@/assets/images/fit1.png"
+import shoesOneImage from "@/assets/images/shoesstore1.png"
+import ticTacToeImage from "@/assets/images/tictactoe1.png"
 import placeholderImage from "@/assets/images/placeholder-project.svg"
 
 interface Project {
@@ -39,7 +45,7 @@ const sampleProjects: Project[] = [
     longDescription:
       "Built a complete financial app with secure payment processing, multi-currency support, transaction history, and real-time alerts. Implemented in Flutter with Firebase and designed for reliability under production traffic.",
     technologies: ["Flutter", "Firebase", "Dart", "Payments"],
-    image: placeholderImage,
+    image: getWellPlusImage,
     featured: true,
   },
   {
@@ -49,7 +55,7 @@ const sampleProjects: Project[] = [
     longDescription:
       "Developed a healthcare tracking platform using Google Maps and Firebase for live location updates, route monitoring, attendance management, and emergency routing support for field teams.",
     technologies: ["Flutter", "Google Maps", "Firebase", "Realtime"],
-    image: placeholderImage,
+    image: businessLocatorImage,
     featured: true,
   },
   {
@@ -59,7 +65,7 @@ const sampleProjects: Project[] = [
     longDescription:
       "Created a specialized toolkit for civil engineers with advanced formulas, calculation modules, and offline usage. Optimized data structures and UX for fast workflow in construction environments.",
     technologies: ["Flutter", "Dart", "Offline", "UX"],
-    image: placeholderImage,
+    image: civilCalcImage,
   },
   {
     id: "4",
@@ -68,7 +74,7 @@ const sampleProjects: Project[] = [
     longDescription:
       "Built two connected apps: one for students and one for educators. Added real-time leaderboards, question management, and analytics dashboards powered by Firebase.",
     technologies: ["Flutter", "Firebase", "Admin Panel"],
-    image: placeholderImage,
+    image: fitOneImage,
   },
   {
     id: "5",
@@ -77,7 +83,7 @@ const sampleProjects: Project[] = [
     longDescription:
       "Designed an interactive learning experience with motion-driven UI, progress syncing, and age-aware content flows. Tuned performance for low-end devices.",
     technologies: ["Flutter", "Animations", "Firebase"],
-    image: placeholderImage,
+    image: shoesOneImage,
   },
   {
     id: "6",
@@ -86,7 +92,7 @@ const sampleProjects: Project[] = [
     longDescription:
       "Implemented websocket gameplay for smooth, low-latency turn sync, plus matchmaking, rematch flows, and player statistics to improve retention.",
     technologies: ["Flutter", "WebSocket", "Realtime"],
-    image: placeholderImage,
+    image: ticTacToeImage,
   },
 ]
 

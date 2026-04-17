@@ -2,6 +2,7 @@ import React, { useState } from "react"
 import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { List, X, DownloadSimple } from "@phosphor-icons/react"
+import resumePdf from "@/assets/documents/SajidAliResume.pdf"
 
 const navItems = [
   { label: "Home", href: "#home" },
@@ -24,7 +25,7 @@ export function Navigation() {
 
   const handleResumeDownload = () => {
     const link = document.createElement("a")
-    link.href = "/src/assets/documents/Sajid_Ali_Resume.pdf"
+    link.href = resumePdf
     link.download = "Sajid_Ali_Resume.pdf"
     document.body.appendChild(link)
     link.click()

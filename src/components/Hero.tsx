@@ -2,7 +2,14 @@ import React from "react"
 import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { ArrowRight, Envelope } from "@phosphor-icons/react"
-import placeholderImage from "@/assets/images/placeholder-project.svg"
+import businessLocatorImage from "@/assets/images/businesslocator.png"
+import fitOneImage from "@/assets/images/fit1.png"
+import shoesOneImage from "@/assets/images/shoesstore1.png"
+import getWellPlusImage from "@/assets/images/getwellplus1.png"
+import ticTacToeImage from "@/assets/images/tictactoe1.png"
+import civilCalcImage from "@/assets/images/civilcalculator1.png"
+import teslaImage from "@/assets/images/tesla1.png"
+import googleAdsImage from "@/assets/images/googleads.png"
 
 const featureChips = ["Fast", "Productive", "Flexible"]
 
@@ -15,32 +22,27 @@ const heroGradient =
   "radial-gradient(ellipse at bottom, #1a68d3 40%, transparent 80%)," +
   "radial-gradient(ellipse at 5% 340%, transparent 80%, #bfc2f4 80%)"
 
-interface AppShotCardProps {
+interface HeroShotCardProps {
   title: string
   className: string
   delay: number
+  image?: string
   onClick: () => void
 }
 
-function AppShotCard({ title, className, delay, onClick }: AppShotCardProps) {
+function HeroShotCard({ title, className, delay, image, onClick }: HeroShotCardProps) {
   return (
     <motion.button
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5, delay }}
-      onClick={onClick}
-      className={`group relative overflow-hidden rounded-2xl border border-white/35 shadow-[0_16px_40px_rgba(1,30,86,0.45)] ${className}`}
       type="button"
+      onClick={onClick}
+      initial={{ opacity: 0, y: 14 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.45, delay }}
+      className={`card ${className}`}
+      style={{ backgroundImage: `url(${image || businessLocatorImage})` }}
+      aria-label={`Open ${title}`}
     >
-      <img
-        src={placeholderImage}
-        alt={title}
-        className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-      />
-      <div className="absolute inset-0 bg-gradient-to-br from-[#0f5ecf]/25 via-[#1a68d3]/45 to-[#79d0f5]/25" />
-      <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#04163a] via-[#04163a]/70 to-transparent p-3 text-left">
-        <p className="text-xs font-semibold text-white/95 leading-tight">{title}</p>
-      </div>
+      <span className="card-label">{title}</span>
     </motion.button>
   )
 }
@@ -60,6 +62,7 @@ export function Hero() {
       }}
     >
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_18%,rgba(255,255,255,0.18),transparent_24%),radial-gradient(circle_at_82%_10%,rgba(255,255,255,0.1),transparent_20%)]" />
+
       <div className="container max-w-7xl px-6 relative z-10">
         <div className="grid lg:grid-cols-2 gap-10 lg:gap-12 items-center">
           <motion.div
@@ -118,32 +121,32 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.12 }}
-            className="rounded-3xl border border-white/35 bg-white/10 backdrop-blur-md p-4 md:p-5"
+            className="hero-shot-wall rounded-3xl border border-white/35 bg-white/10 backdrop-blur-md p-4 md:p-5"
           >
-            <div className="hidden md:grid grid-cols-[1fr_1.16fr_1fr] gap-3 lg:gap-4 items-stretch">
-              <div className="flex flex-col gap-3 lg:gap-4">
-                <AppShotCard title="Financial App" className="h-28 lg:h-32" delay={0.15} onClick={goToProjects} />
-                <AppShotCard title="Health Tracker" className="h-36 lg:h-40" delay={0.2} onClick={goToProjects} />
-                <AppShotCard title="Kids Learning" className="h-28 lg:h-32" delay={0.25} onClick={goToProjects} />
+            <div className="inner-fixed hidden md:grid">
+              <div className="col col-outer col-left">
+                <HeroShotCard title="Business Locator" className="card-a" delay={0.14} image={businessLocatorImage} onClick={goToProjects} />
+                <HeroShotCard title="Fitness Tracker" className="card-b" delay={0.18} image={fitOneImage} onClick={goToProjects} />
+                <HeroShotCard title="Shoe Store App" className="card-c" delay={0.22} image={shoesOneImage} onClick={goToProjects} />
               </div>
 
-              <div className="flex flex-col">
-                <AppShotCard title="T20 Cricket Game" className="h-full min-h-[380px] lg:min-h-[430px]" delay={0.28} onClick={goToProjects} />
+              <div className="col col-center">
+                <HeroShotCard title="GetWellPlus" className="card-a" delay={0.26} image={getWellPlusImage} onClick={goToProjects} />
               </div>
 
-              <div className="flex flex-col gap-3 lg:gap-4">
-                <AppShotCard title="Multiplayer Game" className="h-24 lg:h-28" delay={0.32} onClick={goToProjects} />
-                <AppShotCard title="Civil Calculator" className="h-24 lg:h-28" delay={0.36} onClick={goToProjects} />
-                <AppShotCard title="Edu Quiz Platform" className="h-24 lg:h-28" delay={0.4} onClick={goToProjects} />
-                <AppShotCard title="Fintech Dashboard" className="h-24 lg:h-28" delay={0.44} onClick={goToProjects} />
+              <div className="col col-outer col-right">
+                <HeroShotCard title="Tic Tac Toe" className="card-a" delay={0.3} image={ticTacToeImage} onClick={goToProjects} />
+                <HeroShotCard title="Civil Calculator" className="card-b" delay={0.34} image={civilCalcImage} onClick={goToProjects} />
+                <HeroShotCard title="Tesla UI Concept" className="card-c" delay={0.38} image={teslaImage} onClick={goToProjects} />
+                <HeroShotCard title="Ads Integration" className="card-d" delay={0.42} image={googleAdsImage} onClick={goToProjects} />
               </div>
             </div>
 
-            <div className="grid md:hidden grid-cols-2 gap-3">
-              <AppShotCard title="Financial App" className="h-28" delay={0.15} onClick={goToProjects} />
-              <AppShotCard title="Health Tracker" className="h-28" delay={0.2} onClick={goToProjects} />
-              <AppShotCard title="Edu Quiz" className="h-28" delay={0.25} onClick={goToProjects} />
-              <AppShotCard title="T20 Cricket Game" className="h-28" delay={0.3} onClick={goToProjects} />
+            <div className="inner-fixed-mobile grid md:hidden">
+              <HeroShotCard title="Business Locator" className="card-a" delay={0.14} image={businessLocatorImage} onClick={goToProjects} />
+              <HeroShotCard title="GetWellPlus" className="card-b" delay={0.18} image={getWellPlusImage} onClick={goToProjects} />
+              <HeroShotCard title="Tic Tac Toe" className="card-c" delay={0.22} image={ticTacToeImage} onClick={goToProjects} />
+              <HeroShotCard title="Civil Calculator" className="card-d" delay={0.26} image={civilCalcImage} onClick={goToProjects} />
             </div>
           </motion.div>
         </div>
